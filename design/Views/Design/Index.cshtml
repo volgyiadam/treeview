@@ -1,0 +1,18 @@
+﻿
+<ul id="fileSystemInfos" class="filetree"></ul><br />
+<div id="fileSystemInfosControl"><a href="?#">Collapse All</a> | <a href="?#">Expand All</a></div>
+
+@section JavaScript {
+    <script src="@Url.Content("~/Scripts/jquery-treeview-async-0.1.0.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#fileSystemInfos').treeview({
+                url: '@Url.Action("FileSystemInfos")',
+                ajax: {
+                    type: 'post'
+                },
+                control: '#fileSystemInfosControl'
+            })
+        });
+    </script>
+}

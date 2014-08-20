@@ -1,0 +1,226 @@
+﻿        body {
+            background: url(../../Content/newdesign/background.png) no-repeat 0px 0px;
+            background-size: cover;
+            padding: 0;
+            margin: 0;
+        }
+
+        #header-links {
+            height: 50px;
+            background: #7DAAAF;
+        }
+
+        #header-title {
+            height: 100px;
+            line-height: 100px;
+            background-color: rgb(212, 212, 212);
+            background-color: rgba(212, 212, 212, 0.5);
+        }
+
+            #header-title img {
+                /*background-color: rgb(125, 170, 175);*/
+                padding: 5px 5px 5px 5px;
+                margin: 5px 5px 5px 5px;
+                -webkit-border-radius: 2px;
+                -moz-border-radius: 2px;
+                border-radius: 2px;
+                width: auto;
+                height: 80px;
+            }
+
+            #header-title span {
+                position: absolute;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+        .iconlink {
+            width: 28px;
+            height: 28px;
+            display: inline-block;
+            overflow: hidden;
+            padding-left: 10px;
+            color: transparent;
+        }
+
+        .iconlink-back {
+            margin: 10px 0px 0px 10px;
+            background: url(../../Content/newdesign/icon-back.png) no-repeat 0px 0px;
+            /*background-color: #ffffff;*/
+        }
+
+
+        .iconlink-home {
+            margin: 10px 0px 0px 10px;
+            background: url(../../Content/newdesign/icon-home.png) no-repeat 0px 0px;
+            /*background-color: #ffffff;*/
+        }
+
+        .iconlink-search {
+            background: url(../../Content/newdesign/icon-search.png) no-repeat 0px 0px;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            background-color: rgb(89, 118, 121);
+            background-position: center;
+            margin: 0px 0px 0px 10px;
+            padding-left: 0px;
+        }
+
+        .iconlink-add {
+            padding-left: 0px;
+            margin: 10px 0px 0px 0px;
+            background: url(../../Content/newdesign/icon-add.png) no-repeat 0px 0px;
+            /*background-size: 100%;*/
+            background-color: rgb(89, 118, 121);
+            background-position: center;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+        }
+
+        #body {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding-bottom: 80px;
+            height: 700px;
+        }
+
+
+        #body-left {
+            width: 20%;
+            float: left;
+            margin-top: 20px;
+            /*z-index:10;*/
+        }
+
+        #body-right {
+            margin-top: 20px;
+            width: 80%;
+            float: right;
+            background-color: rgba(255, 255, 255, 0.5);
+            /*z-index:0;*/
+            /*padding: 20px 20px 20px 20px;*/
+        }
+
+        #top {
+            width: 80%;
+            margin: auto;
+            padding-top: 35px;
+            padding-bottom: 5px;
+            height: 35px;
+        }
+
+        #bottom {
+            width: 80%;
+            margin: auto;
+        }
+
+        #left-top {
+            float: left;
+            height: 35px;
+            font-family: Arial;
+            color: rgb(125, 170, 175);
+            font-size: large;
+        }
+
+        #right-top {
+            float: right;
+            height: 35px;
+        }
+
+        hr {
+            border: 2px solid;
+        }
+
+        #add-button {
+            margin-right: 50px;
+            float: right;
+        }
+
+        table.minimalist {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0px 5px;
+            color: white;
+            font-family: Arial;
+            text-align: left;
+        }
+
+
+
+            table.minimalist th {
+                background-color: rgb(125, 170, 175);
+                font-size: medium;
+                height: 30px;
+                padding-left: 20px;
+                width: 33%;
+            }
+
+            table.minimalist td {
+                background-color: rgb(120, 120, 120);
+                font-size: small;
+                height: 30px;
+                padding-left: 20px;
+                width: 33%;
+            }
+
+        table.table-lines {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial;
+            text-align: left;
+            /*border: 1px solid black;*/
+            padding-left: 100px;
+        }
+
+            table.table-lines tr {
+                height: 60px;
+                /*min-height: 180px;*/
+                /*padding-left: 100px;*/
+            }
+
+            table.table-lines td {
+                border: 1px solid black;
+                width: 15%;
+                padding-left: 2em;
+            }
+
+                table.table-lines td:first-child {
+                    border-left: none;
+                    width: 55%;
+                }
+
+                table.table-lines td:last-child {
+                    border-right: none;
+                }
+
+        table.table-mixed {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0px 0px;
+            font-family: Arial;
+            text-align: left;
+        }
+
+
+
+            table.table-mixed th {
+                background-color: rgb(125, 170, 175);
+                font-size: medium;
+                height: 30px;
+                padding-left: 20px;
+                width: 33%;
+                color: white;
+            }
+
+            table.table-mixed td {
+                
+                font-size: small;
+                height: 30px;
+                padding-left: 20px;
+                width: 33%;
+            }
+
+            table.table-mixed tr:nth-child(odd) {
+                background-color: rgba(212, 212, 212, 0.5);
+            }

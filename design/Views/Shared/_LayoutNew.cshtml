@@ -1,0 +1,195 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    
+    <link href="~/Content/site2.css" rel="stylesheet" />
+    <link href="~/Content/jquery-treeview.css" rel="stylesheet" />
+    @RenderSection("Css", false)
+    @* TODO: css render *@
+
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryui")
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/timepicker")
+        @Scripts.Render("~/bundles/datepickerhun")
+        @Scripts.Render("~/bundles/timepickerhun")
+        @Scripts.Render("~/bundles/naptarnevek")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/kineticjs")
+
+        @RenderSection("scripts", required: false)*@
+
+    @*<script type="text/javascript">
+        $(document).ready(function () {
+            $('#menu').treeview({
+                url: '/Design/Index/'
+            })
+        });
+    </script>*@
+
+</head>
+<body>
+
+    <div id="container">
+        <div id="header">
+            <div id="header-links">
+                <a class="iconlink iconlink-back" href="javascript: history.go(-1);" title="Vissza"></a>
+                @Html.ActionLink("Főoldal", "Index", "Home", null, new { @class = "iconlink iconlink-home", title = "Főoldal" })
+            </div>
+            <div id="header-title">
+                @*<img src="../../Content/newdesign/header-title.png" alt="" />*@
+                <div>
+                    <img src="../../Content/newdesign/param.png" alt="" style="resize:both" />
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="body">
+            <div id="body-left">
+                <div id="menucontainer">
+                    <ul id="menu" class="treeview">
+                        <li>@Html.ActionLink("Treeview", "Index", "Design")</li>
+                    </ul>
+                </div>
+                        </div>
+            <div id="body-right">
+                <div id="top">
+                    <div id="left-top">
+                        Személyi állomány teljes listája
+                    </div>
+                    <div id="right-top">
+                        <input type="text" style="width: 150px; height: 20px; vertical-align:top" /><a class="iconlink iconlink-search" href="" title="Keres"></a>
+                    </div>
+
+                </div>
+                <hr />
+                <div id="bottom">
+                    @*<table class="minimalist">
+                            <thead>
+                                <tr>
+                                    <th>Név</th>
+                                    <th>Szervezet</th>
+                                    <th>Születés ideje</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>nincs adat</td>
+                                    <td>nincs adat</td>
+                                    <td>nincs adat</td>
+                                </tr>
+                                <tr>
+                                    <td>nincs adat</td>
+                                    <td>nincs adat</td>
+                                    <td>nincs adat</td>
+                                </tr>
+                            </tbody>
+                        </table>*@
+                    @*<table class="table-lines">
+
+                            <tbody>
+                                <tr>
+                                    <td>Kivehető szabadság</td>
+                                    <td>0/0</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Elrendelt szabadság</td>
+                                    <td>13/13</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Tervezett szabadság</td>
+                                    <td>13/13</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+
+                            </tbody>
+                        </table>*@
+
+                    <table class="table-mixed">
+                        <thead>
+                            <tr>
+                                <th>Megtekintés</th>
+                                <th>Név</th>
+                                <th>Születés dátum</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Megtekintés</td>
+                                <td>KOvács Balázs</td>
+                                <td>1978.06.29.</td>
+                            </tr>
+                            <tr>
+                                <td>Megtekintés</td>
+                                <td>KOvács Balázs</td>
+                                <td>1978.06.29.</td>
+                            </tr>
+                            <tr>
+                                <td>Megtekintés</td>
+                                <td>KOvács Balázs</td>
+                                <td>1978.06.29.</td>
+                            </tr>
+                            <tr>
+                                <td>Megtekintés</td>
+                                <td>KOvács Balázs</td>
+                                <td>1978.06.29.</td>
+                            </tr>
+                            <tr>
+                                <td>Megtekintés</td>
+                                <td>KOvács Balázs</td>
+                                <td>1978.06.29.</td>
+                            </tr>
+                            <tr>
+                                <td>Megtekintés</td>
+                                <td>KOvács Balázs</td>
+                                <td>1978.06.29.</td>
+                            </tr>
+                            <tr>
+                                <td>Megtekintés</td>
+                                <td>KOvács Balázs</td>
+                                <td>1978.06.29.</td>
+                            </tr>
+                            <tr>
+                                <td>Megtekintés</td>
+                                <td>KOvács Balázs</td>
+                                <td>1978.06.29.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <a class="iconlink iconlink-add" href="" title="Új" style="float:right;"></a>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+        <div id="footer">
+            @RenderBody()
+        </div>
+    </div>
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-treeview-1.4.0.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-treeview-async-0.1.0.js")" type="text/javascript"></script>
+    
+    @RenderSection("JavaScript", false)
+</body>
+</html>
