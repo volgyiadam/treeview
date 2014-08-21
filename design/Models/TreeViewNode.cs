@@ -13,5 +13,12 @@ namespace design.Models
         public string classes { get; set; }
         public bool hasChildren { get; set; }
         public TreeViewNode[] children { get; set; }
+
+
+        public TreeViewNode(string id, string text)
+        {
+            this.id = id;
+            this.text = text;
+        }
     }
 }

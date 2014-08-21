@@ -14,6 +14,26 @@ namespace design.Controllers
     {
         //
         // GET: /Design/
+        static List<TreeViewNode> nodes;
+        static DesignController()
+        {
+            nodes = new List<TreeViewNode>();
+            TreeViewNode t1 = new TreeViewNode("1", "Könyv");
+            TreeViewNode alt = new TreeViewNode("1a", "Irodalom");
+            TreeViewNode b1 = new TreeViewNode("1a1", "Szépirodalom");
+            TreeViewNode b2 = new TreeViewNode("1a2", "Szakirodalom");
+            TreeViewNode blt = new TreeViewNode("1b", "Krimi");
+            alt.children = new TreeViewNode[] { b1,b2  };
+            t1.children = new TreeViewNode[] { alt, blt };
+            alt.hasChildren = true;
+            t1.hasChildren = true;
+            nodes.Add(t1);
+            nodes.Add(b1);
+            nodes.Add(b2);
+            nodes.Add(alt);
+            nodes.Add(blt);
+
+        }
         public ActionResult Index()
         {
             return View();
@@ -21,35 +41,15 @@ namespace design.Controllers
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult FileSystemInfos(string root)
         {
-            DirectoryInfo rootDirectory = null;
-            if (root == null || root=="source")
-                rootDirectory = new DirectoryInfo(@"C:\dev\");
+            List<TreeViewNode> model = new List<TreeViewNode>();
+            if (root == "source" || root == null)
+                model = nodes.Where(x =>x.id == "1").ToList();
             else
             {
-                rootDirectory = new DirectoryInfo(root);
-
+                model = nodes.SingleOrDefault(x => x.id == root).children.OrderBy(x => x.text).ToList();
             }
-            var directoryChildren = from child in rootDirectory.GetFileSystemInfos()
-                                    orderby child is DirectoryInfo descending
-                                    select child;
-
-            List<TreeViewNode> nodes = new List<TreeViewNode>();
-            foreach (FileSystemInfo directoryChild in directoryChildren)
-            {
-                bool isDirectory = directoryChild is DirectoryInfo;
-                nodes.Add(new TreeViewNode()
-                {
-                    id = directoryChild.FullName,
-                    text = directoryChild.Name,
-                    classes = isDirectory ? "folder" : "file",
-                    hasChildren = isDirectory
-                    
-                    
-                });
-            }
-            return Json(nodes.ToArray());
-            //return new JsonResult() { Data = nodes.ToArray(), JsonRequestBehavior = JsonRequestBehavior.AllowGet };
-            
+            return Json(model.ToArray());
+           
         }
 
     }
